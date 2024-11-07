@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "ace.actually.valkyrienweightlifting.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"EntityShipCollisionUtilsMixin",
+		"PlayerMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

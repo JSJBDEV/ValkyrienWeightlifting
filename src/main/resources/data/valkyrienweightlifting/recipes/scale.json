@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "scale",
+  "ingredients": [
+
+    {"item": "minecraft:iron_block"},
+    {"item": "minecraft:black_concrete_powder"}
+
+  ],
+  "result": {
+    "item": "valkyrienweightlifting:scale"
+  }
+}

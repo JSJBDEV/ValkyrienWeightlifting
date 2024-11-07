@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "strength_tester",
+  "ingredients": [
+
+    {"item": "minecraft:iron_block"},
+    {"item": "minecraft:red_concrete_powder"},
+    {"item": "minecraft:black_concrete_powder"}
+
+  ],
+  "result": {
+    "item": "valkyrienweightlifting:strength_tester"
+  }
+}

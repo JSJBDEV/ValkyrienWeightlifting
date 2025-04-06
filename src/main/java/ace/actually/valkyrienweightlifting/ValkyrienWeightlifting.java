@@ -6,7 +6,9 @@ import io.github.kosmx.emotes.api.events.server.ServerEmoteAPI;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.ChainBlock;
+import net.minecraft.block.SweetBerryBushBlock;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
@@ -87,8 +89,15 @@ public class ValkyrienWeightlifting implements ModInitializer {
                             }
                             else
                             {
+
+                                if(world.getBlockState(lift).getCollisionShape(world,lift).isEmpty())
+                                {
+                                    break;
+                                }
+
                                 String dimensionId = VSGameUtilsKt.getDimensionId(world);
                                 ServerShip serverShip = VSGameUtilsKt.getShipObjectWorld(world).createNewShipAtBlock(VectorConversionsMCKt.toJOML(lift), false, 1, dimensionId);
+
                                 BlockPos centerPos = VectorConversionsMCKt.toBlockPos(serverShip.getChunkClaim().getCenterBlockCoordinates(VSGameUtilsKt.getYRange(world),new Vector3i()));
                                 RelocationUtilKt.relocateBlock(world, lift, centerPos, true, serverShip, BlockRotation.NONE);
 
@@ -132,6 +141,7 @@ public class ValkyrienWeightlifting implements ModInitializer {
                             GameTickForceApplier gtfa = serverShip.getAttachment(GameTickForceApplier.class);
                             if(gtfa!=null)
                             {
+
                                 Vec3d vec3d = serverPlayerEntity.getRotationVector().normalize().multiply(100000);
 
                                 Vector3d v3d = VectorConversionsMCKt.toJOML(vec3d);

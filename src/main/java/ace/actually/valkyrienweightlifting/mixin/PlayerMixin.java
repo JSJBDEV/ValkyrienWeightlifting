@@ -64,7 +64,16 @@ public abstract class PlayerMixin extends LivingEntity implements IGymBro {
 
 			if (optShip.isPresent()) {
 				ServerShip ship = (ServerShip) optShip.get();
-				int yvar = (int) Math.ceil((double) (ship.getShipAABB().maxY() - ship.getShipAABB().minY()) / 2);
+				int yvar;
+				if(ship.getShipAABB()!=null)
+				{
+					yvar = (int) Math.ceil((double) (ship.getShipAABB().maxY() - ship.getShipAABB().minY()) / 2);
+				}
+				else
+				{
+					yvar = 1;
+				}
+
 
 
 				double mass = ship.getInertiaData().getMass();

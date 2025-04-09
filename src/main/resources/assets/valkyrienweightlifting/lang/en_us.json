@@ -3,5 +3,10 @@
   "key.weightlifting.push": "Push Block/Ship",
   "category.weightlifting": "Valkyrien Weightlifting",
   "item.valkyrienweightlifting.strength_tester": "Strength Tester",
-  "item.valkyrienweightlifting.scale": "Scale"
+  "item.valkyrienweightlifting.scale": "Scale",
+  "item.valkyrienweightlifting.gym_membership": "Gym Membership",
+  "gym.membership.save": "Saved you current strength to this gym membership!",
+  "gym.membership.load": "You went to the gym and got your strength back!",
+  "gym.need_emeralds": "You need an emerald in your offhand to restore your strength",
+  "gym.save_explain": "Use this to store your current strength and retrieve it at a later date!"
 }

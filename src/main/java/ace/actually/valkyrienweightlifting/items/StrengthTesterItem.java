@@ -4,6 +4,7 @@ import ace.actually.valkyrienweightlifting.IGymBro;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
@@ -21,6 +22,7 @@ public class StrengthTesterItem extends Item {
         {
             IGymBro bro = (IGymBro) user;
             user.sendMessage(Text.of("I think I can lift "+bro.getStrength()+"kg"));
+
         }
         return super.use(world, user, hand);
     }

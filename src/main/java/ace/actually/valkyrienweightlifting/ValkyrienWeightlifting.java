@@ -1,5 +1,6 @@
 package ace.actually.valkyrienweightlifting;
 
+import ace.actually.valkyrienweightlifting.items.GymMembershipItem;
 import ace.actually.valkyrienweightlifting.items.ScaleItem;
 import ace.actually.valkyrienweightlifting.items.StrengthTesterItem;
 import io.github.kosmx.emotes.api.events.server.ServerEmoteAPI;
@@ -45,6 +46,7 @@ public class ValkyrienWeightlifting implements ModInitializer {
             {
                 fabricItemGroupEntries.add(ValkyrienWeightlifting.STRENGTH_TESTER_ITEM);
                 fabricItemGroupEntries.add(ValkyrienWeightlifting.SCALE_ITEM);
+                fabricItemGroupEntries.add(ValkyrienWeightlifting.GYM_MEMBERSHIP_ITEM);
             }
         });
         ServerPlayNetworking.registerGlobalReceiver(LIFT_PACKET,((minecraftServer, serverPlayerEntity, serverPlayNetworkHandler, packetByteBuf, packetSender) ->
@@ -162,9 +164,11 @@ public class ValkyrienWeightlifting implements ModInitializer {
 
     public static final StrengthTesterItem STRENGTH_TESTER_ITEM = new StrengthTesterItem(new Item.Settings());
     public static final ScaleItem SCALE_ITEM = new ScaleItem(new Item.Settings());
+    public static final GymMembershipItem GYM_MEMBERSHIP_ITEM = new GymMembershipItem(new Item.Settings());
     private void registerItems()
     {
         Registry.register(Registries.ITEM,new Identifier("valkyrienweightlifting","strength_tester"),STRENGTH_TESTER_ITEM);
         Registry.register(Registries.ITEM,new Identifier("valkyrienweightlifting","scale"),SCALE_ITEM);
+        Registry.register(Registries.ITEM,new Identifier("valkyrienweightlifting","gym_membership"),GYM_MEMBERSHIP_ITEM);
     }
 }

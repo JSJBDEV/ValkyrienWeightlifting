@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "scale",
+  "ingredients": [
+
+    {"item": "minecraft:paper"},
+    {"item": "minecraft:amethyst_shard"}
+
+  ],
+  "result": {
+    "item": "valkyrienweightlifting:gym_membership"
+  }
+}
